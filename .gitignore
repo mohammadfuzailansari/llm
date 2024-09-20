@@ -1,0 +1,44 @@
+# Ignore Python bytecode and cache directories
+__pycache__/
+*.py[cod]
+*$py.class
+htmlcov/
+
+# Ignore virtual environment directories
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Ignore distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Ignore IDE and editor directories and files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore environment variables files
+.env
+.env.*
+
+*.log
+logs/
