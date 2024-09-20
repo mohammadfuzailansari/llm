@@ -4,16 +4,9 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_openai import ChatOpenAI
 from langserve import add_routes
-import os
-from openai import OpenAIError
 from dotenv import load_dotenv
 
 load_dotenv()  # This loads the environment variables from .env
-
-# Try to get the API key from environment
-api_key = os.getenv('OPENAI_API_KEY')
-if not api_key:
-    raise OpenAIError("The OPENAI_API_KEY environment variable is not set.")
 
 # 1. Create prompt template
 system_template = "Translate the following into {language}:"
@@ -23,7 +16,7 @@ prompt_template = ChatPromptTemplate.from_messages([
 ])
 
 # 2. Create model
-model = ChatOpenAI(api_key=api_key)
+model = ChatOpenAI()
 
 # 3. Create parser
 parser = StrOutputParser()
@@ -47,7 +40,6 @@ add_routes(
 )
 
 if __name__ == "__main__":
-    import uvicorn
-    
+    import uvicorn   
     uvicorn.run(app, host="localhost", port=8000)
 
