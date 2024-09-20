@@ -11,8 +11,7 @@ from dotenv import load_dotenv
 load_dotenv()  # This loads the environment variables from .env
 
 # Try to get the API key from environment
-#api_key = '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'
-api_key = api_key = os.getenv('OPENAI_API_KEY')
+api_key = api_key = os.getenv('api_key')
 #os.getenv('OPENAI_API_KEY')
 if not api_key:
     raise OpenAIError("The OPENAI_API_KEY environment variable is not set.")
